@@ -20,12 +20,24 @@ function moveDodgerRight() {
     }
 }
 
+function moveDodgerUp(){
+    let upNumbers = dodger.style.top.replace("px", "")
+    let up = parseInt(upNumbers, 10)
+    if (up <= 380){
+        dodger.style.top = `${up - 1}px`
+    }
+
+}
+
 document.addEventListener("keydown", function(event){
     if (event.key == "ArrowLeft"){
         moveDodgerLeft()
     }
     if (event.key == "ArrowRight"){
         moveDodgerRight()
+    }
+    if (event.key == "ArrowUp"){
+        moveDodgerUp()
     }
 })
 
